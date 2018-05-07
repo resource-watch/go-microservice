@@ -2,9 +2,9 @@
 
 case "$1" in
     develop)
-        docker build --target develop -t go-microservice-develop:latest .
+        docker build --target builder -t go-microservice-develop:latest .
         exec docker run -t -i \
-        --mount type=bind,source="$(pwd)",target=/app,consistency=consistent \
+        --mount type=bind,source="$(pwd)"/src,target=/go/src/app/src,consistency=consistent \
         -p 3050:3050 \
         go-microservice-develop:latest \
         develop

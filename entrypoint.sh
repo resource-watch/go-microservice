@@ -4,7 +4,7 @@ set -e
 case "$1" in
     develop)
         echo "Running Develop"
-        exec realize start --path="." --run
+        exec realize start --run
         ;;
     start)
         echo "Running Start"
